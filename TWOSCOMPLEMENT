@@ -1,0 +1,41 @@
+import random
+negative = 0
+mynumber = random.randint(-127,127)
+mynumber2 = str(mynumber)
+print ("The number to enter is " + mynumber2)
+if mynumber < 0:
+    negative = 1
+    mynumber = mynumber * -1
+a = bin(mynumber)
+bignumber = 256
+if negative == 1:
+    c = bignumber - mynumber
+elif negative == 0:
+    c = mynumber
+Binary = bin(c)
+length = len(Binary)
+Newc = (a[2:length])
+Stringc = str(Newc)
+while len(Stringc) < 7:
+    Stringc = ("0" + Stringc)
+if negative == 1:
+    Stringc = ("1" + Stringc)
+elif negative == 0:
+    Stringc = ("0"+ Stringc)
+print(Stringc)
+lives = 3
+complete = 1
+while complete == 1:
+    INP = str(input("Enter number here"))
+    if INP == Stringc:
+        print("Success")
+        complete = 0
+    else:
+        lives = lives - 1
+        print("Lives left")
+        print(lives)
+
+    if lives == 0:
+        complete = 0
+        print ("Lol u suk")
+print("wow")
